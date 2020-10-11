@@ -7,13 +7,15 @@ import { HttpService } from './services/http.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  httpResponse: any = {};
+  httpResponse: any = [];
   constructor(private httpservice: HttpService) {
-    this.ButtonClick();
+    this.getData(0, 5);
   }
   title = 'assignment1';
-  ButtonClick(){
-    this.httpservice.getHttpResponse().then((data: any) => {
+  getData(from, to){
+    debugger;
+    this.httpResponse = [];
+    this.httpservice.getHttpResponse(from, to).then((data: any) => {
       this.httpResponse = data;
       console.log(data);
     }).catch((error) => {

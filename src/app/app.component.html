@@ -1,9 +1,16 @@
-<div *ngFor="let i of httpResponse">
-  <p>{{i.albumId}}</p>
-  <p>{{i.id}}</p>
-  <p>{{i.title}}</p>
-  <p>{{i.url}}</p>
-  <p>{{i.thumbnailUrl}}</p>
+<div *ngFor="let i of httpResponse" class="divMargin">
+  <p>{{i?.albumId}}</p>
+  <p>{{i?.id}}</p>
+  <p>{{i?.title}}</p>
+  <p>{{i?.url}}</p>
+  <p>{{i?.thumbnailUrl}}</p>
+</div>
+<div class="buttonDiv">
+  <button (click)="getData(6,10)">1</button>
+  <button (click)="getData(11,15)">2</button>
+  <button (click)="getData(16,20)">3</button>
+  <button (click)="getData(21,25)">4</button>
+  <button (click)="getData(26,30)">5</button>
 </div>
 
 <router-outlet></router-outlet>
